@@ -10,7 +10,7 @@ from ..views import (
     DebtListCreateView, DebtRetrieveUpdateDestroyView,
     InvestmentListCreateView, InvestmentRetrieveUpdateDestroyView,
     FinancialProfileListCreateView, FinancialProfileRetrieveUpdateDestroyView,guardar_informacion_general,obtener_informacion_por_id,
-    obtener_flujo_caja,abonar_meta,obtener_distribucion_gastos,get_user_info
+    obtener_flujo_caja,abonar_meta,obtener_distribucion_gastos,get_user_info,generate_report
 )
 
 urlpatterns = [
@@ -42,6 +42,8 @@ urlpatterns = [
     path('reports/', list_reports, name='list_reports'),
     path('reports/create/', create_report, name='create_report'),
     path('reports/delete/<int:report_id>/', delete_report, name='delete_report'),
+    path('reports/create/', create_report, name='create_report'),
+    path('reports/<int:report_id>/', generate_report, name='generate_report'),
 
     # Notificaciones
     path('notifications/', list_notifications, name='list_notifications'),
